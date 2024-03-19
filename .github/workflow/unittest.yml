@@ -3,7 +3,7 @@ name: CI/CD Exercise
 on:
     push:
         branches:
-              - main
+              - master
 
 jobs:
     python: 
