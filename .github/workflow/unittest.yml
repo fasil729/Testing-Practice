@@ -1,20 +1,24 @@
-name: CI/CD Exercise 
+name: CI/CD Exercise
 
 on:
-    push:
-        branches:
-              - master
+  push:
+    branches:
+      - master
 
 jobs:
-    python: 
-         runs-on: ubuntu-latest
-         
-         steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-python@v3
-              with:
-                 pythonversion: '3.x'
-            
-            - run: python --version
+  python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Run Python version
+        run: python --version
+
 
       
